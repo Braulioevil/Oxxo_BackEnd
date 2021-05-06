@@ -5,5 +5,8 @@ import mex.edu.itlplapieda.models.Productos;
 public interface ProductosServices {
 
 	Productos buscar(int id);
+	
+	//Productos insertar(Productos productos);
+
 
 }

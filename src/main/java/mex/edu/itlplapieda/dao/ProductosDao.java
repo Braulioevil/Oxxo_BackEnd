@@ -6,4 +6,6 @@ public interface ProductosDao {
 
 	Productos buscar(int id);
 
+	Productos insertar(Productos productos);
+
 }
