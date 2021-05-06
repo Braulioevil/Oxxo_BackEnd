@@ -3,6 +3,7 @@ package mex.edu.itlplapieda.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,5 +52,11 @@ public class ProductosJdbc implements ProductosDao {
 		Number id=insert.executeAndReturnKey(datos);
 		productos.setId(id.intValue());
 		return productos;
+	}
+
+	@Override
+	public List<Productos> consultarProductos() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
