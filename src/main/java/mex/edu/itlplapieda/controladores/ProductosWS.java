@@ -34,5 +34,28 @@ public class ProductosWS {
         }
         return new ResponseEntity<Productos>(resultado,HttpStatus.OK);
     }
+    
+    @PostMapping()
+	public ResponseEntity<?>insertar(@RequestBody Productos productos){
+		Productos resultado;
+	try {
+		resultado=servicio.insertar(productos);
+		
+	} catch (DataAccessException e) {
+	return new ResponseEntity<>(HttpStatus.CONFLICT);
+	}	
+		return new ResponseEntity<Productos>(resultado,HttpStatus.CREATED);
+		
+	}
+	@GetMapping()
+	public ResponseEntity<?> consultarProductos(){
+		List<Productos> resultado;
+		try {
+			resultado = servicio.consultarProductos();
+		}catch (DataAccessException e) {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<List<Productos>>(resultado,HttpStatus.OK);
+	}
 
 }
