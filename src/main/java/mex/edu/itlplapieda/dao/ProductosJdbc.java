@@ -21,6 +21,25 @@ public class ProductosJdbc implements ProductosDao {
 	JdbcTemplate conexion;
 	
 	@Override
+	public List<Productos> consultarProductos() {
+		String sql_query = "SELECT * FROM productos";
+		return conexion.query(sql_query, new RowMapper<Productos>() {
+			public Productos mapRow(ResultSet rs,int rowNum) throws SQLException {
+				Productos productos = new Productos();
+				productos.setId(rs.getInt("id"));
+				productos.setDescripcion(rs.getString("descripcion"));
+				productos.setPrecio(rs.getFloat("precio"));
+				productos.setCodigo_barras(rs.getString("codigo_barras"));
+				productos.setExistencia(rs.getInt("existencia"));
+				return productos;
+				
+			}
+
+			
+		});
+	}
+	
+	@Override
     public Productos buscar(int id) {
         String sql_query = "SELECT * FROM productos WHERE id=?";
         return conexion.queryForObject(sql_query, new RowMapper<Productos>() {
@@ -52,11 +71,5 @@ public class ProductosJdbc implements ProductosDao {
 		Number id=insert.executeAndReturnKey(datos);
 		productos.setId(id.intValue());
 		return productos;
-	}
-
-	@Override
-	public List<Productos> consultarProductos() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }
