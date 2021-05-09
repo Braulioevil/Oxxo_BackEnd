@@ -1,4 +1,4 @@
-package mex.edu.itlplapieda.models;
+package mex.edu.itlapiedad.models;
 
 public class Productos {
 

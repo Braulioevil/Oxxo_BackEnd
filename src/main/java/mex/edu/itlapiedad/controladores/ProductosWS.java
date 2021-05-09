@@ -1,4 +1,4 @@
-package mex.edu.itlplapieda.controladores;
+package mex.edu.itlapiedad.controladores;
 
 import java.util.List;
 
@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import mex.edu.itlplapieda.models.Productos;
-import mex.edu.itlplapieda.services.ProductosServices;
+import mex.edu.itlapiedad.models.Productos;
+import mex.edu.itlapiedad.services.ProductosServices;
 
 @RestController
-@RequestMapping("/devops/productos")
+@RequestMapping("/DevOps/Productos")
 
 public class ProductosWS {
 	
@@ -53,6 +53,7 @@ public class ProductosWS {
 		try {
 			resultado = servicio.consultarProductos();
 		}catch (DataAccessException e) {
+			System.out.println(e);
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<List<Productos>>(resultado,HttpStatus.OK);

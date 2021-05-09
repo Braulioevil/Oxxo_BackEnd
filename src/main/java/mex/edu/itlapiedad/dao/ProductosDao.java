@@ -1,8 +1,8 @@
-package mex.edu.itlplapieda.dao;
+package mex.edu.itlapiedad.dao;
 
 import java.util.List;
 
-import mex.edu.itlplapieda.models.Productos;
+import mex.edu.itlapiedad.models.Productos;
 
 public interface ProductosDao {
 

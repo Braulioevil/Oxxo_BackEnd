@@ -1,4 +1,4 @@
-package mex.edu.itlplapieda.services;
+package mex.edu.itlapiedad.services;
 
 
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import mex.edu.itlplapieda.dao.ProductosDao;
-import mex.edu.itlplapieda.models.Productos;
-import mex.edu.itlplapieda.services.ProductosServices;
+import mex.edu.itlapiedad.dao.ProductosDao;
+import mex.edu.itlapiedad.models.Productos;
+
 
 @Service
 

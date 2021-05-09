@@ -1,4 +1,4 @@
-package mex.edu.itlplapieda.dao;
+package mex.edu.itlapiedad.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,7 +12,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
-import mex.edu.itlplapieda.models.Productos;
+import mex.edu.itlapiedad.models.Productos;
 
 @Repository
 public class ProductosJdbc implements ProductosDao {
