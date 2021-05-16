@@ -1,6 +1,7 @@
 package mex.edu.itlapiedad.dao;
 
 import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
@@ -21,7 +22,7 @@ public class ProductosJdbc implements ProductosDao {
 	JdbcTemplate conexion;
 	
 	@Override
-	public List<Productos> consultarProductos() {
+	public List<Productos> consultarProductos1() {
 		String sql_query = "SELECT * FROM productos";
 		return conexion.query(sql_query, new RowMapper<Productos>() {
 			public Productos mapRow(ResultSet rs,int rowNum) throws SQLException {
@@ -72,4 +73,12 @@ public class ProductosJdbc implements ProductosDao {
 		productos.setId(id.intValue());
 		return productos;
 	}
+
+	@Override
+	public List<Productos> consultarProductos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 }

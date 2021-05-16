@@ -10,7 +10,11 @@ public interface ProductosDao {
 
 	Productos insertar(Productos productos);
 
+	List<Productos> consultarProductos1();
+
 	List<Productos> consultarProductos();
+
+	
 
 
 }
