@@ -12,7 +12,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
-import mx.edu.itlapiedad.models.Ticket_renglones;
+import mex.edu.itlapiedad.models.Ticket_renglones;
 
 @Repository
 public class Ticket_renglonesJDBC implements Ticket_renglonesDAO {

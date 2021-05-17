@@ -10,6 +10,10 @@ public interface ProductosServices {
 
 	Productos insertar(Productos productos);
 
-	List<Productos> consultarProductos();	
+	List<Productos> consultarProductos();
+
+	void actualizar(Productos productos);
+
+	void eliminar(int id);	
 
 }

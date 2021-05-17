@@ -2,14 +2,16 @@ package mex.edu.itlapiedad.services;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import mex.edu.itlapiedad.dao.Ticket_renglonesDAO;
 import mex.edu.itlapiedad.dao.TicketsDAO;
+import mex.edu.itlapiedad.models.Ticket_renglones;
 import mex.edu.itlapiedad.models.Tickets;
 
 @Service
+
 
 public class TicketsLogic implements TicketsService{
 	@Autowired
@@ -42,4 +44,5 @@ public class TicketsLogic implements TicketsService{
 		repositorios.eliminar(id);
 		
 	}
+
 }
