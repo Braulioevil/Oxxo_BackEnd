@@ -27,4 +27,4 @@ jobs:
       uses: action/upload-artifact@v1
       with:
         name: Oxxo_BackEnd
-        path: Oxxo_BackEnd/target/Oxxo_BackEnd-0.0.1.jar
+        path: target/Oxxo_BackEnd-0.0.1-SNAPSHOT.jar
