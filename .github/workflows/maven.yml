@@ -24,7 +24,7 @@ jobs:
     - name: Compilar y empquetar con  Maven
       run: mvn -B package --file pom.xml
     - name: Subir .jar
-      uses: action/upload-artifact@v1
+      uses: actions/upload-artifact@v1
       with:
         name: Oxxo_BackEnd
         path: target/Oxxo_BackEnd-0.0.1-SNAPSHOT.jar
