@@ -1,6 +1,8 @@
 package mex.edu.itlapiedad.controladores;
 import java.util.List;
 
+//Equipo chilaquil: Braulio, Magui, Mora y Gareth
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
