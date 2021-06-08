@@ -4,7 +4,8 @@ import java.util.List;
 
 import mex.edu.itlapiedad.models.Tickets;
 
-public interface TicketsDAO {
+public interface TicketsDAO 
+{
 	
 	Tickets buscar(int id);
 

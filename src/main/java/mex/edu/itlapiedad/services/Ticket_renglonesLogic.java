@@ -1,9 +1,11 @@
 package mex.edu.itlapiedad.services;
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import mex.edu.itlapiedad.dao.Ticket_renglonesDAO;
+import mex.edu.itlapiedad.models.Ticket_Renglones_Importe;
 import mex.edu.itlapiedad.models.Ticket_renglones;
 
 @Service
@@ -39,5 +41,11 @@ repositorio.actualizar(ticket_renglones);
 	public void eliminar(int id) {
 		// TODO Auto-generated method stub
 repositorio.eliminar(id);
+	}
+
+	@Override
+	public List<Ticket_Renglones_Importe> totalFecha(Timestamp fecha_hora) {
+		// TODO Auto-generated method stub
+		return repositorio.totalFecha(fecha_hora);
 	}
 }

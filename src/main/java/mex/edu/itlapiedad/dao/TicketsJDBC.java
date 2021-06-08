@@ -92,5 +92,4 @@ public class TicketsJDBC implements TicketsDAO{
 		conexion.update(sql_update,id);
 		
 	}
-
 }

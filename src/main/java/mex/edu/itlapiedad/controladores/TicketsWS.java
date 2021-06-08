@@ -16,12 +16,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import mex.edu.itlapiedad.models.Tickets;
 import mex.edu.itlapiedad.services.TicketsService;
 
 @RestController
-@RequestMapping("/DevOps/tickets")
+@RequestMapping("/DevOps/Tickets")
 
 public class TicketsWS {
 	
@@ -75,6 +74,7 @@ public class TicketsWS {
 	}
 	
 	//metodo de eliminar por id
+	
 			@DeleteMapping("/{id}")
 			public ResponseEntity<?>eliminarTickets(@PathVariable int id){
 				
@@ -90,5 +90,4 @@ public class TicketsWS {
 				return new ResponseEntity<Tickets>(HttpStatus.OK);
 				
 			}
-
 }

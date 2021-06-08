@@ -3,6 +3,7 @@ package mex.edu.itlapiedad.models;
 public class Ticket_renglones {
 private int id, TICKET_id, PRODUCTO_id,cantidad,activo;
 private float precio,importe;
+
 public int getId() {
 	return id;
 }

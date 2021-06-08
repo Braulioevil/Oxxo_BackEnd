@@ -2,6 +2,7 @@ package mex.edu.itlapiedad.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
+import mex.edu.itlapiedad.models.Ticket_Renglones_Importe;
 import mex.edu.itlapiedad.models.Ticket_renglones;
 
 @Repository
@@ -97,5 +99,30 @@ public class Ticket_renglonesJDBC implements Ticket_renglonesDAO {
 		String sql_update="UPDATE ticket_renglones SET activo=0 WHERE id=?";
 		conexion.update(sql_update,id);
 	}
+	
+	//Total por fecha
+	
+	@Override
+	public List<Ticket_Renglones_Importe> totalFecha(Timestamp fecha_hora) 
+	{
+		
+		String sql_query = "SELECT fecha_hora, sum(importe) as importe "
+				+ "FROM ticket_renglones  "
+				+ "JOIN tickets ON ticket_renglones.TICKET_id = tickets.id "
+				+ "JOIN cajeros  ON cajeros.id=tickets.CAJERO_id  "
+				+ "WHERE fecha_hora=?";
+		return conexion.query(sql_query, new RowMapper<Ticket_Renglones_Importe>() 
+		{
+			public Ticket_Renglones_Importe mapRow(ResultSet rs, int rowNum) throws SQLException 
+			{
+				Ticket_Renglones_Importe ticket_renglones = new Ticket_Renglones_Importe();
+				ticket_renglones.setImporte(rs.getFloat("importe"));
 
+				return ticket_renglones;
+
+			
+			}
+
+		},fecha_hora);
+	}
 }

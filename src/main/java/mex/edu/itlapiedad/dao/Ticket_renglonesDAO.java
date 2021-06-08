@@ -1,7 +1,9 @@
 package mex.edu.itlapiedad.dao;
 
+import java.sql.Timestamp;
 import java.util.List;
 
+import mex.edu.itlapiedad.models.Ticket_Renglones_Importe;
 import mex.edu.itlapiedad.models.Ticket_renglones;
 
 
@@ -17,4 +19,5 @@ public interface Ticket_renglonesDAO {
 
 	void eliminar(int id);
 
+	List<Ticket_Renglones_Importe> totalFecha(Timestamp fecha_hora);
 }

@@ -18,7 +18,7 @@ import mex.edu.itlapiedad.models.Cajeros;
 import mex.edu.itlapiedad.services.CajerosService;
 
 @RestController
-@RequestMapping("/devops/cajeros")
+@RequestMapping("/DevOps/Cajeros")
 public class CajerosWS {
 		
 		@Autowired

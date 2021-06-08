@@ -1,5 +1,6 @@
 package mex.edu.itlapiedad.controladores;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,14 +14,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import mex.edu.itlapiedad.models.Ticket_Renglones_Importe;
 import mex.edu.itlapiedad.models.Ticket_renglones;
 import mex.edu.itlapiedad.services.Ticket_renglonesService;
 
 
 @RestController
-@RequestMapping("/devops/ticket_renglones")
+@RequestMapping("/DevOps/Ticket_Renglones")
 
 public class Ticket_renglonesWS {
 
@@ -90,6 +93,21 @@ public class Ticket_renglonesWS {
 		return new ResponseEntity<Ticket_renglones>(HttpStatus.OK);
 
 	}
-
+	
+	//Consultar por fecha
+	
+	@GetMapping("/totalImporte/fecha")
+	public ResponseEntity<?> totalFecha(@RequestParam Timestamp fecha_hora) 
+	{
+		List<Ticket_Renglones_Importe> resultado;
+		try 
+		{
+			resultado = servicio.totalFecha(fecha_hora);
+		} catch (DataAccessException e) {
+			System.out.println(e);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<List<Ticket_Renglones_Importe>>(resultado, HttpStatus.OK);
+	}
 }
 
