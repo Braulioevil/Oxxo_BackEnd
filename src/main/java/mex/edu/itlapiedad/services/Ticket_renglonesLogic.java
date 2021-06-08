@@ -55,5 +55,11 @@ public List<Ticket_Renglones_Importe> totalNombre(String nombre) {
 	// TODO Auto-generated method stub
 	return repositorio.totalNombre(nombre);
 }
+
+@Override
+public List<Ticket_Renglones_Importe> totalId(int id) {
+	// TODO Auto-generated method stub
+	return repositorio.totalId(id);
+}
 }
 

@@ -149,6 +149,31 @@ public class Ticket_renglonesJDBC implements Ticket_renglonesDAO {
 
 		},nombre);
 	}
+	
+	//Total por id
+	
+		public List<Ticket_Renglones_Importe> totalId(int id) 
+		{
+			
+			String sql_query = "SELECT fecha_hora, sum(importe) as importe "
+					+ "FROM ticket_renglones  "
+					+ "JOIN tickets ON ticket_renglones.TICKET_id = tickets.id "
+					+ "JOIN cajeros  ON cajeros.id=tickets.CAJERO_id  "
+					+ "WHERE cajeros.id=?";
+			return conexion.query(sql_query, new RowMapper<Ticket_Renglones_Importe>() 
+			{
+				public Ticket_Renglones_Importe mapRow(ResultSet rs, int rowNum) throws SQLException 
+				{
+					Ticket_Renglones_Importe ticket_renglones = new Ticket_Renglones_Importe();
+					ticket_renglones.setImporte(rs.getFloat("importe"));
+
+					return ticket_renglones;
+
+				
+				}
+
+			},id);
+		}
 }
 
 

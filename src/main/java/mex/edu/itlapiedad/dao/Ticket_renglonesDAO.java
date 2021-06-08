@@ -22,6 +22,9 @@ public interface Ticket_renglonesDAO {
 	List<Ticket_Renglones_Importe> totalFecha(Timestamp fecha_hora);
 	
 	List<Ticket_Renglones_Importe> totalNombre(String nombre);
+	
+
+	List<Ticket_Renglones_Importe> totalId(int id);
 }
 
 

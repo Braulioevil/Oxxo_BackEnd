@@ -21,4 +21,6 @@ public interface Ticket_renglonesService {
 	List<Ticket_Renglones_Importe> totalFecha(Timestamp fecha_hora);
 
 	List<Ticket_Renglones_Importe> totalNombre(String nombre);
+	
+	List<Ticket_Renglones_Importe> totalId(int id);
 }
