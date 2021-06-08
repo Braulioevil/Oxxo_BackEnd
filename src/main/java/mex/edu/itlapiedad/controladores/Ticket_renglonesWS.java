@@ -109,5 +109,24 @@ public class Ticket_renglonesWS {
 		}
 		return new ResponseEntity<List<Ticket_Renglones_Importe>>(resultado, HttpStatus.OK);
 	}
+
+	//Consultar por nombre
+		@GetMapping("/totalImporte/nombre")
+		public ResponseEntity<?> totalNombre(@RequestParam String nombre) 
+		{
+			List<Ticket_Renglones_Importe> resultado;
+			try 
+			{
+				resultado = servicio.totalNombre(nombre);
+			} catch (DataAccessException e) {
+				System.out.println(e);
+				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
+			return new ResponseEntity<List<Ticket_Renglones_Importe>>(resultado, HttpStatus.OK);
+		}
+
 }
+
+
+
 

@@ -20,4 +20,8 @@ public interface Ticket_renglonesDAO {
 	void eliminar(int id);
 
 	List<Ticket_Renglones_Importe> totalFecha(Timestamp fecha_hora);
+	
+	List<Ticket_Renglones_Importe> totalNombre(String nombre);
 }
+
+

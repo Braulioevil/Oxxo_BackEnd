@@ -48,4 +48,12 @@ repositorio.eliminar(id);
 		// TODO Auto-generated method stub
 		return repositorio.totalFecha(fecha_hora);
 	}
+	
+
+@Override
+public List<Ticket_Renglones_Importe> totalNombre(String nombre) {
+	// TODO Auto-generated method stub
+	return repositorio.totalNombre(nombre);
 }
+}
+
